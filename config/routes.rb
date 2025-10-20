@@ -10,15 +10,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
-  get "/products", to: "products#index"
-
-  get "products/new", to: "products#new"
-  post "/products", to: "product#create"
-
-  get "/products/:id", to: "products#show"
-
-  get "/products/:id/edit", to: "products#edit"
-  patch "/products/:id", to: "products#update"
-  put "/product"
+  resources :products
 end
